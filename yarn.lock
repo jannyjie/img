@@ -6010,6 +6010,11 @@
     "hash-sum" "^2.0.0"
     "loader-utils" "^2.0.0"
 
+"vue-meta@^3.0.0-alpha.10":
+  "integrity" "sha512-rYeIGkhm1gKBcReEkPHiV6LV2Y6BZTMGTkGw1mQIZTxfFcVJL0srLZsL1zAmLeTGxMrlDYylMQEVSYRkDnwz3A=="
+  "resolved" "https://registry.npmjs.org/vue-meta/-/vue-meta-3.0.0-alpha.10.tgz"
+  "version" "3.0.0-alpha.10"
+
 "vue-picture-cropper@^0.5.1":
   "integrity" "sha512-hHwTRsmpHazd1ZVDZA7hMm2FSAUSfnagi60orxX5qsEhx3dxwb8jOv8weC6pz9YMitQs8US7KTbusi01UeRTkg=="
   "resolved" "https://registry.npmjs.org/vue-picture-cropper/-/vue-picture-cropper-0.5.1.tgz"
