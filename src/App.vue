@@ -13,9 +13,15 @@
 <script>
 import { useMeta, useActiveMeta } from "vue-meta/dist/vue-meta.esm-browser";
 import { reactive } from "vue";
+import setMeta from "@/utils/setMeta";
 export default {
   name: "App",
   setup() {
+    setMeta({
+      title: "ENJOY DEV",
+      description: "프론트엔드 개발 블로그",
+      keywords: "blog, frontend, vue3, vueCLI4",
+    });
     const meta = reactive({
       title: "title活動",
       description:
