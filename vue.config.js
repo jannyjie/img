@@ -1,18 +1,35 @@
 const { defineConfig } = require("@vue/cli-service");
+var path = require("path");
+const PrerenderSPAPlugin = require("prerender-spa-plugin");
+
 module.exports = defineConfig({
   transpileDependencies: true,
   publicPath: "./",
+  chainWebpack: (config) => {
+    config.plugin("html").tap((args) => {
+      args[0].title = "Startblock";
+      return args;
+    });
+  },
+
+  configureWebpack: {
+    plugins: [
+      new PrerenderSPAPlugin({
+        // Required - The path to the webpack-outputted app to prerender.
+        staticDir: path.join(__dirname, "dist"),
+        // Required - Routes to render.
+        routes: ["/"],
+      }),
+    ],
+  },
+
   pluginOptions: {
     prerenderSpa: {
       registry: undefined,
-      renderRoutes: ["/", "/about"],
+      renderRoutes: ["/"],
       useRenderEvent: true,
+      headless: true,
       onlyProduction: true,
-
-      headless: false, // <- this could also be inside the customRendererConfig
-      customRendererConfig: {
-        args: ["--auto-open-devtools-for-tabs"],
-      },
     },
   },
 });

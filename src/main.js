@@ -12,7 +12,9 @@ import {
 createApp(App)
   .use(router)
   .use(createMetaManager())
-  .use(metaPlugin)
+  .use(metaPlugin, {
+    mounted: () => document.dispatchEvent(new Event("x-app-rendered")),
+  })
   .use(baiduAnalytics, {
     router,
     siteIdList: ["8dca8e2532df48ea7f1b15c714588691"],
